@@ -71,7 +71,7 @@ export function Comparison() {
                     <td className="py-4 px-5 text-zinc-400">
                       <div className="flex items-start gap-2">
                         <Minus className="w-4 h-4 text-amber-500/70 shrink-0 mt-0.5" />
-                        <span>{row.answeringBureau}</span>
+                        <span>{row.humanCenter}</span>
                       </div>
                     </td>
 

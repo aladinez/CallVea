@@ -60,14 +60,6 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollTo("#simulator")}
-                  className="hover:text-white transition-colors"
-                >
-                  Call Simulator
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => scrollTo("#industries")}
                   className="hover:text-white transition-colors"
                 >
@@ -88,6 +80,22 @@ export function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   Comparison
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollTo("#demo-form")}
+                  className="hover:text-white transition-colors"
+                >
+                  Book a Demo
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollTo("#faq")}
+                  className="hover:text-white transition-colors"
+                >
+                  FAQ
                 </button>
               </li>
             </ul>
@@ -133,10 +141,10 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollTo("#pricing")}
+                  onClick={() => scrollTo("#demo-form")}
                   className="hover:text-white transition-colors"
                 >
-                  ROI Calculator
+                  Get a Quote
                 </button>
               </li>
             </ul>

@@ -1,10 +1,9 @@
 import { Hero } from "@/components/hero";
-import { CallSimulator } from "@/components/call-simulator";
 import { Solutions } from "@/components/solutions";
 import { Industries } from "@/components/industries";
-import { Workflow } from "@/components/workflow";
-import { PricingCalculator } from "@/components/pricing-calculator";
+import { HowItWorks } from "@/components/how-it-works";
 import { Comparison } from "@/components/comparison";
+import { DemoForm } from "@/components/demo-form";
 import { FAQ } from "@/components/faq";
 import { CTABanner } from "@/components/cta-banner";
 
@@ -12,12 +11,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <CallSimulator />
       <Solutions />
       <Industries />
-      <Workflow />
+      <HowItWorks />
       <Comparison />
-      <PricingCalculator />
+      <DemoForm />
       <FAQ />
       <CTABanner />
     </>

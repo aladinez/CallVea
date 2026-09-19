@@ -9,11 +9,8 @@ import {
   Building,
   CheckCircle2,
   TrendingUp,
-  ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { INDUSTRIES_DATA } from "@/lib/data";
 
 export function Industries() {
@@ -161,17 +158,6 @@ export function Industries() {
                   &ldquo;{current.sampleDialogue.ai}&rdquo;
                 </div>
               </div>
-
-              <Button
-                onClick={() => {
-                  const el = document.querySelector("#pricing");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"
-              >
-                <span>Deploy {current.name} Voice Agent</span>
-                <ArrowRight className="w-4 h-4" />
-              </Button>
 
             </div>
 

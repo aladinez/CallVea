@@ -1,18 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, PhoneCall, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export function CTABanner() {
-  const scrollToPricing = () => {
-    const el = document.querySelector("#pricing");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToSimulator = () => {
-    const el = document.querySelector("#simulator");
+  const scrollToDemo = () => {
+    const el = document.querySelector("#demo-form");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -37,24 +32,14 @@ export function CTABanner() {
             Deploy your custom AI receptionist in 48 hours. Keep your existing phone line, integrate your CRM, and achieve sub-500ms turn-taking latency.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <div className="flex justify-center w-full sm:w-auto">
             <Button
               size="lg"
-              onClick={scrollToPricing}
-              className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base px-8 shadow-xl shadow-indigo-600/25 flex items-center justify-center gap-2"
+              onClick={scrollToDemo}
+              className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base px-8 py-3 rounded-xl shadow-xl shadow-indigo-600/25 flex items-center justify-center gap-2"
             >
-              Get Custom Pricing & Plan
+              Get Custom Pricing & Book Demo
               <ArrowRight className="w-4 h-4" />
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={scrollToSimulator}
-              className="w-full sm:w-auto border-zinc-700 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 text-sm sm:text-base px-6 flex items-center justify-center gap-2"
-            >
-              <PhoneCall className="w-4 h-4 text-cyan-400" />
-              Re-inspect Live Call HUD
             </Button>
           </div>
 

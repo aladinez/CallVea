@@ -70,12 +70,12 @@ export function Navbar() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 bg-zinc-900/60 border border-zinc-800/80 rounded-full px-4 py-1.5 backdrop-blur-md">
+        <nav className="hidden md:flex items-center gap-1.5 bg-zinc-900/80 border border-zinc-800/90 rounded-full px-4 py-1.5 backdrop-blur-md shadow-lg">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => scrollTo(link.href)}
-              className="text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 px-3.5 py-1.5 rounded-full transition-all duration-150"
+              className="text-[14px] font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 px-4 py-2 rounded-full transition-all duration-150"
             >
               {link.label}
             </button>
@@ -86,12 +86,12 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Button
             variant="default"
-            size="sm"
+            size="default"
             onClick={() => scrollTo("#demo-form")}
-            className="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white font-semibold text-xs shadow-md shadow-indigo-500/25 flex items-center gap-1.5 px-4"
+            className="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-md shadow-indigo-500/25 flex items-center gap-1.5 px-5 py-2.5 rounded-xl"
           >
             <span>Get a Quote</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
 
@@ -113,7 +113,7 @@ export function Navbar() {
               <button
                 key={link.label}
                 onClick={() => scrollTo(link.href)}
-                className="text-left text-sm font-medium text-zinc-300 hover:text-white py-2 px-3 rounded-lg hover:bg-zinc-900"
+                className="text-left text-base font-semibold text-zinc-200 hover:text-white py-2.5 px-3 rounded-lg hover:bg-zinc-900"
               >
                 {link.label}
               </button>

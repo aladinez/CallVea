@@ -273,26 +273,44 @@ ${data.notes ? data.notes : "None specified"}
                     {...register("industry")}
                     className="flex h-11 w-full rounded-xl border border-zinc-800 bg-zinc-900/90 px-3.5 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   >
-                    <option value="Home Services & Trades (HVAC, Plumbing, Electrical)">
-                      Home Services & Trades (HVAC, Plumbing, Electrical)
+                    <option value="Home Services & Trades (HVAC, Plumbing, Electrical, Roofing)">
+                      Home Services & Trades (HVAC, Plumbing, Electrical, Roofing)
                     </option>
                     <option value="Legal & Law Practice (Personal Injury, Corporate, Family)">
                       Legal & Law Practice (Personal Injury, Corporate, Family)
                     </option>
-                    <option value="Healthcare & Medical/Dental Clinics">
-                      Healthcare & Medical/Dental Clinics
+                    <option value="Healthcare & Medical Clinics (Dental, MedSpas, Therapy)">
+                      Healthcare & Medical Clinics (Dental, MedSpas, Therapy)
                     </option>
                     <option value="Real Estate & Property Management">
                       Real Estate & Property Management
                     </option>
-                    <option value="Financial Services & Insurance">
-                      Financial Services & Insurance
+                    <option value="Financial & Wealth Advisory (CPAs, Planners, Insurance)">
+                      Financial & Wealth Advisory (CPAs, Planners, Insurance)
                     </option>
-                    <option value="Automotive & Dealerships">
-                      Automotive & Dealerships
+                    <option value="Automotive Dealerships & Auto Repair">
+                      Automotive Dealerships & Auto Repair
                     </option>
-                    <option value="Other / Technology / General Services">
-                      Other / Technology / General Services
+                    <option value="Hospitality, Dining & Event Venues">
+                      Hospitality, Dining & Event Venues
+                    </option>
+                    <option value="Fitness, Wellness & Beauty (Spas, Salons, Gyms)">
+                      Fitness, Wellness & Beauty (Spas, Salons, Gyms)
+                    </option>
+                    <option value="B2B Agencies & Professional Consultancies">
+                      B2B Agencies & Professional Consultancies
+                    </option>
+                    <option value="Logistics, Moving & Field Services">
+                      Logistics, Moving & Field Services
+                    </option>
+                    <option value="Education, Tutoring & Private Academies">
+                      Education, Tutoring & Private Academies
+                    </option>
+                    <option value="Veterinary & Animal Hospitals">
+                      Veterinary & Animal Hospitals
+                    </option>
+                    <option value="Other / Custom Business Architecture">
+                      Other / Custom Business Architecture
                     </option>
                   </select>
                 </div>

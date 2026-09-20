@@ -65,15 +65,18 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
 export interface IndustryItem {
   id: string;
   name: string;
-  subhead: string;
-  painPoint: string;
-  callveaSolution: string;
-  roiStat: string;
-  roiLabel: string;
-  integrations: string[];
-  sampleDialogue: {
-    caller: string;
-    ai: string;
+  trades: string;
+  badge: string;
+  image: string;
+  shortDescription: string;
+  stat: string;
+  iconName: string;
+  accent: {
+    color: string;
+    border: string;
+    bg: string;
+    glow: string;
+    tag: string;
   };
 }
 
@@ -81,65 +84,205 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
   {
     id: "trades",
     name: "Home Services & Trades",
-    subhead: "HVAC, Plumbing, Electrical, Roofing",
-    painPoint:
-      "Homeowners facing an emergency won't leave a voicemail—they call the next contractor. Missing after-hours calls costs thousands in lost revenue.",
-    callveaSolution:
-      "Callvea answers 24/7, identifies urgent jobs (like burst pipes or furnace outages), captures job details, quotes your call-out fee, and dispatches on-call technicians.",
-    roiStat: "+$18,000",
-    roiLabel: "Avg Monthly Saved in Emergency Revenue",
-    integrations: ["Jobber", "ServiceTitan", "Housecall Pro", "Google Calendar"],
-    sampleDialogue: {
-      caller: "My AC unit just died and water is leaking everywhere in the garage!",
-      ai: "I'm so sorry to hear that. Let's get an emergency tech out to you. While I dispatch someone to your address, please switch off the main breaker to the unit. Can our team arrive within 60 minutes?",
+    trades: "HVAC • Plumbing • Electrical • Roofing • Restoration",
+    badge: "24/7 Emergency Dispatch",
+    image: "/images/industries/trades.jpg",
+    shortDescription: "Picks up emergency calls instantly, gathers job symptoms, quotes standard call-out fees, and books appointments directly into Jobber or ServiceTitan.",
+    stat: "Zero missed after-hours jobs",
+    iconName: "Wrench",
+    accent: {
+      color: "text-amber-400",
+      border: "border-amber-500/30 group-hover:border-amber-500/60",
+      bg: "bg-amber-500/10",
+      glow: "from-amber-500/20 via-orange-500/5 to-transparent",
+      tag: "bg-amber-500/10 text-amber-300 border-amber-500/20",
     },
   },
   {
     id: "legal",
-    name: "Legal & Professional Services",
-    subhead: "Personal Injury, Immigration, Family Law, Corporate",
-    painPoint:
-      "Prospective clients shopping for an attorney want immediate reassurance. Delaying intake means losing retainers to competing firms.",
-    callveaSolution:
-      "Callvea conducts empathetic intake interviews, gathers critical incident details, verifies conflicts of interest, and books qualified consultations directly on attorney calendars.",
-    roiStat: "2.5x",
-    roiLabel: "Increase in Qualified Consultation Bookings",
-    integrations: ["Clio", "MyCase", "LawPay", "HubSpot"],
-    sampleDialogue: {
-      caller: "I was injured in a car accident yesterday and the insurance company is pressuring me to sign a settlement.",
-      ai: "Please do not sign anything yet. Our attorneys specialize in motor vehicle claims and can protect your rights. Let me take down your details and schedule an immediate priority consultation with Partner Miller.",
+    name: "Legal & Law Practice",
+    trades: "Personal Injury • Family Law • Criminal • Corporate",
+    badge: "Client Intake & Screening",
+    image: "/images/industries/legal.jpg",
+    shortDescription: "Conducts confidential intake interviews, verifies jurisdiction and conflict criteria, and books qualified consultations directly on attorney calendars.",
+    stat: "100% confidential intake",
+    iconName: "Scale",
+    accent: {
+      color: "text-indigo-400",
+      border: "border-indigo-500/30 group-hover:border-indigo-500/60",
+      bg: "bg-indigo-500/10",
+      glow: "from-indigo-500/20 via-blue-500/5 to-transparent",
+      tag: "bg-indigo-500/10 text-indigo-300 border-indigo-500/20",
     },
   },
   {
     id: "healthcare",
-    name: "Healthcare & Clinics",
-    subhead: "Dental, Dermatology, Physical Therapy, Specialty Care",
-    painPoint:
-      "Reception desks are overwhelmed managing phones while checking in patients. Long hold times frustrate patients and increase cancellation rates.",
-    callveaSolution:
-      "Callvea handles routine scheduling, appointment rescheduling, directions, and pre-op instructions, freeing your staff to focus on in-person patient care.",
-    roiStat: "-60%",
-    roiLabel: "Front Desk Administrative Burden",
-    integrations: ["AthenaHealth", "Dentrix", "NexHealth", "Kareo"],
-    sampleDialogue: {
-      caller: "Hi, I need to reschedule my dental cleaning from Thursday to Friday morning if possible.",
-      ai: "I can take care of that for you. Looking at Dr. Patel's calendar for this Friday, I have an opening at 9:30 AM or 11:00 AM. Which one works better for your schedule?",
+    name: "Healthcare & Medical Clinics",
+    trades: "Dental • MedSpas • Physical Therapy • Optometry",
+    badge: "HIPAA Compliant Scheduling",
+    image: "/images/industries/healthcare.jpg",
+    shortDescription: "Answers patient calls without hold times, books and reschedules appointments, answers clinic FAQs, and routes urgent triage to on-call providers.",
+    stat: "60% less front-desk phone load",
+    iconName: "Stethoscope",
+    accent: {
+      color: "text-cyan-400",
+      border: "border-cyan-500/30 group-hover:border-cyan-500/60",
+      bg: "bg-cyan-500/10",
+      glow: "from-cyan-500/20 via-teal-500/5 to-transparent",
+      tag: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
     },
   },
   {
     id: "realestate",
-    name: "Real Estate & Property",
-    subhead: "Commercial, Residential, Leasing Offices",
-    painPoint:
-      "Inquiries arrive at all hours. Tenants with maintenance issues need immediate response, while prospective buyers need instant viewing bookings.",
-    callveaSolution:
-      "Callvea pre-qualifies prospective renters and buyers, schedules automated self-guided tours, and triages emergency maintenance work orders 24/7.",
-    roiStat: "100%",
-    roiLabel: "After-Hours Response Rate & Lead Capture",
-    integrations: ["AppFolio", "Buildium", "Yardi", "Follow Up Boss"],
-    sampleDialogue: {
-      caller: "Hello, I'm calling about the 2-bedroom listing on Maple Avenue. Is it still available to tour?",
-      ai: "Yes, that home is available for private viewings! I can schedule an in-person or self-guided tour for you today or tomorrow. What time would be most convenient?",
+    name: "Real Estate & Property Management",
+    trades: "Residential • Commercial • Property Managers • HOA",
+    badge: "Showing Tours & Maintenance",
+    image: "/images/industries/realestate.jpg",
+    shortDescription: "Schedules property walkthroughs on the spot, qualifies buyer and renter timelines, and captures after-hours emergency maintenance work orders.",
+    stat: "Instant showing booking",
+    iconName: "Building2",
+    accent: {
+      color: "text-purple-400",
+      border: "border-purple-500/30 group-hover:border-purple-500/60",
+      bg: "bg-purple-500/10",
+      glow: "from-purple-500/20 via-pink-500/5 to-transparent",
+      tag: "bg-purple-500/10 text-purple-300 border-purple-500/20",
+    },
+  },
+  {
+    id: "financial",
+    name: "Financial & Wealth Advisory",
+    trades: "CPAs • Tax Advisors • Wealth Managers • Insurance",
+    badge: "Client Reviews & Tax Intake",
+    image: "/images/industries/financial.jpg",
+    shortDescription: "Pre-screens client portfolios, schedules annual tax and investment reviews, answers documentation FAQs, and routes VIP accounts directly.",
+    stat: "Flawless client scheduling",
+    iconName: "LineChart",
+    accent: {
+      color: "text-emerald-400",
+      border: "border-emerald-500/30 group-hover:border-emerald-500/60",
+      bg: "bg-emerald-500/10",
+      glow: "from-emerald-500/20 via-green-500/5 to-transparent",
+      tag: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
+    },
+  },
+  {
+    id: "automotive",
+    name: "Automotive Dealerships & Repair",
+    trades: "Auto Repair • Body Shops • Dealerships • Detailing",
+    badge: "Service Bay Bookings",
+    image: "/images/industries/automotive.jpg",
+    shortDescription: "Schedules vehicle drop-offs, gathers year/make/model and symptoms, and provides rapid status updates to customers waiting on repair progress.",
+    stat: "Maximized shop bay capacity",
+    iconName: "Car",
+    accent: {
+      color: "text-rose-400",
+      border: "border-rose-500/30 group-hover:border-rose-500/60",
+      bg: "bg-rose-500/10",
+      glow: "from-rose-500/20 via-red-500/5 to-transparent",
+      tag: "bg-rose-500/10 text-rose-300 border-rose-500/20",
+    },
+  },
+  {
+    id: "hospitality",
+    name: "Hospitality, Dining & Venues",
+    trades: "Restaurants • Boutique Hotels • Event Spaces • Catering",
+    badge: "Reservations & Buyouts",
+    image: "/images/industries/hospitality.jpg",
+    shortDescription: "Takes table reservations during rush periods, answers dietary and private dining requests, and coordinates private buyout inquiries smoothly.",
+    stat: "Zero lost reservations",
+    iconName: "Utensils",
+    accent: {
+      color: "text-yellow-400",
+      border: "border-yellow-500/30 group-hover:border-yellow-500/60",
+      bg: "bg-yellow-500/10",
+      glow: "from-yellow-500/20 via-amber-500/5 to-transparent",
+      tag: "bg-yellow-500/10 text-yellow-300 border-yellow-500/20",
+    },
+  },
+  {
+    id: "fitness",
+    name: "Fitness, Wellness & Beauty",
+    trades: "Gyms • Day Spas • Hair Salons • Wellness Studios",
+    badge: "Appointments & Memberships",
+    image: "/images/industries/fitness.jpg",
+    shortDescription: "Books treatment sessions and stylist appointments, coordinates trial passes, and answers membership questions around the clock.",
+    stat: "100% automated booking",
+    iconName: "Sparkles",
+    accent: {
+      color: "text-fuchsia-400",
+      border: "border-fuchsia-500/30 group-hover:border-fuchsia-500/60",
+      bg: "bg-fuchsia-500/10",
+      glow: "from-fuchsia-500/20 via-pink-500/5 to-transparent",
+      tag: "bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-500/20",
+    },
+  },
+  {
+    id: "professional",
+    name: "B2B Agencies & Consultancies",
+    trades: "Marketing • IT Services • Architecture • Staffing",
+    badge: "Discovery Call Qualification",
+    image: "/images/industries/professional.jpg",
+    shortDescription: "Qualifies prospect project budgets and timelines, answers service capabilities, and schedules discovery meetings on team calendars.",
+    stat: "Instant enterprise routing",
+    iconName: "Briefcase",
+    accent: {
+      color: "text-blue-400",
+      border: "border-blue-500/30 group-hover:border-blue-500/60",
+      bg: "bg-blue-500/10",
+      glow: "from-blue-500/20 via-sky-500/5 to-transparent",
+      tag: "bg-blue-500/10 text-blue-300 border-blue-500/20",
+    },
+  },
+  {
+    id: "logistics",
+    name: "Logistics, Moving & Field Services",
+    trades: "Movers • Freight • Couriers • Field Technicians",
+    badge: "Instant Quotes & Dispatch",
+    image: "/images/industries/logistics.jpg",
+    shortDescription: "Collects move dates and inventory scope, delivers preliminary rate estimates, and coordinates urgent driver or route dispatch calls.",
+    stat: "24/7 quote generation",
+    iconName: "Truck",
+    accent: {
+      color: "text-teal-400",
+      border: "border-teal-500/30 group-hover:border-teal-500/60",
+      bg: "bg-teal-500/10",
+      glow: "from-teal-500/20 via-emerald-500/5 to-transparent",
+      tag: "bg-teal-500/10 text-teal-300 border-teal-500/20",
+    },
+  },
+  {
+    id: "education",
+    name: "Education, Tutoring & Academies",
+    trades: "Private Schools • Tutoring • Test Prep • Daycares",
+    badge: "Enrollment & Campus Tours",
+    image: "/images/industries/education.jpg",
+    shortDescription: "Answers parent inquiries regarding tuition and curricula, schedules campus tours, and automates trial session registration.",
+    stat: "Streamlined student intake",
+    iconName: "GraduationCap",
+    accent: {
+      color: "text-violet-400",
+      border: "border-violet-500/30 group-hover:border-violet-500/60",
+      bg: "bg-violet-500/10",
+      glow: "from-violet-500/20 via-indigo-500/5 to-transparent",
+      tag: "bg-violet-500/10 text-violet-300 border-violet-500/20",
+    },
+  },
+  {
+    id: "veterinary",
+    name: "Veterinary & Pet Care Hospitals",
+    trades: "Animal Hospitals • Vet Clinics • Boarding • Grooming",
+    badge: "Emergency & Routine Triage",
+    image: "/images/industries/veterinary.jpg",
+    shortDescription: "Triages life-threatening pet distress calls for immediate transfer while booking routine wellness visits, vaccinations, and grooming slots.",
+    stat: "Priority emergency routing",
+    iconName: "HeartPulse",
+    accent: {
+      color: "text-rose-400",
+      border: "border-rose-500/30 group-hover:border-rose-500/60",
+      bg: "bg-rose-500/10",
+      glow: "from-rose-500/20 via-red-500/5 to-transparent",
+      tag: "bg-rose-500/10 text-rose-300 border-rose-500/20",
     },
   },
 ];

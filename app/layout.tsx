@@ -32,6 +32,15 @@ export const metadata: Metadata = {
     description:
       "Sub-500ms turnaround voice agents connected directly to your CRM at 80% lower cost.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png" },
+    ],
+  },
 };
 
 export default function RootLayout({

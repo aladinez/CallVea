@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://callvea.com"),
   title: "Callvea | Enterprise AI Voice Agents & Conversational Receptionists",
   description:
     "Callvea delivers bespoke 24/7 AI Voice Agents, Conversational Receptionists, and Multi-channel Chatbots for businesses with sub-500ms latency and 2-way CRM integration.",

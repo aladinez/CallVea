@@ -119,7 +119,7 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
     id: "healthcare",
     name: "Healthcare & Medical Clinics",
     trades: "Dental • MedSpas • Physical Therapy • Optometry",
-    badge: "HIPAA Compliant Scheduling",
+    badge: "HIPAA-Ready Architecture",
     image: "/images/industries/healthcare.jpg",
     shortDescription: "Answers patient calls without hold times, books and reschedules appointments, answers clinic FAQs, and routes urgent triage to on-call providers.",
     stat: "60% less front-desk phone load",

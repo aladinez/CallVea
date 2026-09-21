@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, ArrowRight, PhoneCall, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -28,6 +29,10 @@ export function Navbar() {
 
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      window.location.href = "/" + id;
+      return;
+    }
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -44,8 +49,8 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center gap-2.5 group focus:outline-none"
         >
           <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-shadow">
@@ -67,7 +72,7 @@ export function Navbar() {
               AI
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1.5 bg-zinc-900/80 border border-zinc-800/90 rounded-full px-4 py-1.5 backdrop-blur-md shadow-lg">

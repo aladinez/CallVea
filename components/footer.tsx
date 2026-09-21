@@ -1,10 +1,15 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ShieldCheck, Lock, Activity, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   const scrollTo = (id: string) => {
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      window.location.href = "/" + id;
+      return;
+    }
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -18,18 +23,30 @@ export function Footer() {
           
           {/* Company Brand Column (5 Cols) */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 p-[1px]">
-                <div className="w-full h-full bg-zinc-950 rounded-[7px] flex items-center justify-center">
-                  <div className="flex items-center gap-0.5">
-                    <span className="w-[2px] h-2.5 bg-indigo-400 rounded-full" />
-                    <span className="w-[2px] h-4 bg-cyan-400 rounded-full" />
-                    <span className="w-[2px] h-2 bg-indigo-300 rounded-full" />
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 group focus:outline-none"
+            >
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-shadow">
+                <div className="w-full h-full bg-zinc-950 rounded-[10px] flex items-center justify-center">
+                  <div className="flex items-center gap-[2.5px]">
+                    <span className="w-[3px] h-3 bg-indigo-400 rounded-full" />
+                    <span className="w-[3px] h-5 bg-cyan-400 rounded-full" />
+                    <span className="w-[3px] h-3.5 bg-indigo-300 rounded-full" />
+                    <span className="w-[3px] h-2 bg-indigo-500 rounded-full" />
                   </div>
                 </div>
               </div>
-              <span className="font-bold text-lg tracking-tight text-white">Callvea</span>
-            </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-xl tracking-tight text-white group-hover:text-zinc-100">
+                  Callvea
+                </span>
+                <span className="text-[10px] tracking-wider uppercase font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  AI
+                </span>
+              </div>
+            </Link>
             
             <p className="text-sm text-zinc-400 max-w-sm leading-relaxed">
               Autonomous enterprise voice agents, conversational receptionists, and multi-channel booking automation with sub-500ms latency and zero hallucinations.
@@ -161,7 +178,7 @@ export function Footer() {
             <div className="space-y-2 pt-1">
               <div className="flex items-center gap-2 text-xs text-zinc-300">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>HIPAA BAA Compliant</span>
+                <span>End-to-End Encrypted</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-zinc-300">
                 <Lock className="w-4 h-4 text-indigo-400" />
@@ -169,7 +186,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 text-xs text-zinc-300">
                 <Activity className="w-4 h-4 text-cyan-400" />
-                <span>99.99% Guaranteed Telephony SLA</span>
+                <span>Carrier-Grade High Availability</span>
               </div>
             </div>
           </div>
@@ -182,9 +199,8 @@ export function Footer() {
             © {new Date().getFullYear()} Callvea Inc. (callvea.com). All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <a href="#privacy" className="hover:text-zinc-300 transition-colors">Privacy Policy</a>
-            <a href="#terms" className="hover:text-zinc-300 transition-colors">Terms of Service</a>
-            <a href="#security" className="hover:text-zinc-300 transition-colors">Security</a>
+            <Link href="/privacy" className="hover:text-zinc-300 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-zinc-300 transition-colors">Terms of Use</Link>
           </div>
         </div>
       </div>

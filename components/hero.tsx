@@ -7,6 +7,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HeroVideo } from "@/components/hero-video";
 
 export function Hero() {
   const scrollTo = (id: string) => {
@@ -87,6 +88,9 @@ export function Hero() {
               <span>Live in 48 hours</span>
             </div>
           </div>
+
+          {/* 15s Live Demonstration Frame */}
+          <HeroVideo />
 
         </div>
       </div>

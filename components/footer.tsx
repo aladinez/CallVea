@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ShieldCheck, Lock, Activity, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, Lock, Activity, ArrowUpRight, PhoneCall } from "lucide-react";
 
 export function Footer() {
   const scrollTo = (id: string) => {
@@ -52,12 +52,22 @@ export function Footer() {
               Autonomous enterprise voice agents, conversational receptionists, and multi-channel booking automation with sub-500ms latency and zero hallucinations.
             </p>
 
-            {/* Live System Status */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-zinc-200 font-medium">All Systems Operational</span>
-              <span className="text-zinc-600">•</span>
-              <span className="text-zinc-400 font-mono">P99 Latency: 362ms</span>
+            {/* Live System Status & Phone */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-zinc-200 font-medium">All Systems Operational</span>
+                <span className="text-zinc-600">•</span>
+                <span className="text-zinc-400 font-mono">P99 Latency: 362ms</span>
+              </div>
+
+              <a
+                href="tel:6132632935"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 text-xs text-zinc-300 hover:text-cyan-300 transition-colors font-mono"
+              >
+                <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
+                <span>613-263-2935</span>
+              </a>
             </div>
           </div>
 

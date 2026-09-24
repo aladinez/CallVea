@@ -75,7 +75,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1.5 bg-zinc-900/80 border border-zinc-800/90 rounded-full px-4 py-1.5 backdrop-blur-md shadow-lg">
+        <nav className="hidden lg:flex items-center gap-1.5 bg-zinc-900/80 border border-zinc-800/90 rounded-full px-4 py-1.5 backdrop-blur-md shadow-lg">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -87,32 +87,54 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Actions */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Actions (Phone & CTA) */}
+        <div className="hidden sm:flex items-center gap-3">
+          <a
+            href="tel:6132632935"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-zinc-800 bg-zinc-900/80 hover:bg-zinc-800 hover:border-zinc-700 text-zinc-200 hover:text-white transition-all text-xs sm:text-sm font-semibold group shadow-sm"
+          >
+            <span className="w-6 h-6 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-cyan-400 flex items-center justify-center group-hover:scale-105 group-hover:bg-indigo-500/20 transition-all">
+              <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
+            </span>
+            <span className="font-mono tracking-wide text-zinc-100 group-hover:text-cyan-300 transition-colors">
+              613-263-2935
+            </span>
+          </a>
+
           <Button
             variant="default"
             size="default"
             onClick={() => scrollTo("#demo-form")}
-            className="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-md shadow-indigo-500/25 flex items-center gap-1.5 px-5 py-2.5 rounded-xl"
+            className="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-indigo-500/25 flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-xl"
           >
             <span>Get a Quote</span>
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
 
-        {/* Mobile menu trigger */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/60 border border-zinc-800 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile quick actions (Call + Menu) */}
+        <div className="flex lg:hidden items-center gap-2">
+          <a
+            href="tel:6132632935"
+            className="sm:hidden p-2 rounded-xl text-cyan-400 bg-zinc-900/80 border border-zinc-800 hover:bg-zinc-800 transition-colors flex items-center justify-center"
+            aria-label="Call 613-263-2935"
+          >
+            <PhoneCall className="w-4 h-4" />
+          </a>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/60 border border-zinc-800 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-2xl px-6 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-2xl px-6 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top-4 duration-200">
           <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <button
@@ -124,14 +146,23 @@ export function Navbar() {
               </button>
             ))}
           </nav>
-          <div className="pt-4 border-t border-zinc-800/80">
+
+          <div className="pt-4 border-t border-zinc-800/80 space-y-2.5">
+            <a
+              href="tel:6132632935"
+              className="flex items-center justify-center gap-2.5 w-full py-3 px-4 rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-100 font-semibold text-sm hover:bg-zinc-800 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4 text-cyan-400" />
+              <span>Call Us: 613-263-2935</span>
+            </a>
+
             <Button
               variant="default"
               size="default"
               onClick={() => scrollTo("#demo-form")}
-              className="w-full justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium flex items-center gap-2"
+              className="w-full justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium flex items-center gap-2 py-3 rounded-xl"
             >
-              Get a Quote & Book Demo
+              <span>Get a Quote & Book Demo</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
